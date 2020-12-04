@@ -51,7 +51,7 @@ O console deve exibir essa informação:
 `[main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 1917ms. Server Running: http://localhost:8080`
 
 ## API Password
-####{localhost:8080}/password
+###{localhost:8080}/password
 
 ### Body
 `{ "password": {string} }`
