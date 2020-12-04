@@ -1,10 +1,24 @@
 # Challenge: Valid password
-### Resolução do case proposto por @itidigital para backend develop
+## Resolução do [case][case] proposto por @itidigital para backend develop
+
+## Descrição
+
+Para a solução optei por construir a aplicação com o Framework [Micronaut][Micronaut].
+
+Na aplicação busquei simplicidade na codificação. Utilizei de expressão regular para validar a maioria dos requisitos. 
+Utilizei de injeção de dependências por construção e segregação de interfaces para permitir a implementação de personalizada quando necessário.
+
+### Pontos relevantes
+
+* O desafio não pede retorno de exceções, assim bastaria sempre devolver um booleano.
+* A URI utilizei o contexto como ´/password´, pois poderá ser utilizável para novos endpoints com novos sub-contextos ou simplesmente para ser identificável.
+* Havia uma nota que não seria considerado campos da senha em branco e realizei a validação especificando os carateres especiais válidos, através de expressão regular por facilmente acrescentar novos caracteres caso necessário.  
+* Optei por utilizar objetos para Entrada e Resultado por considerar mais legível e possibilitar utilizar o objeto para novos campos necessários em novos endpoints ou métodos existentes.
 
 ## O que vamos precisar?
 
 * JDK 11
-* IDE from support Micronaut + Java
+* IDE from support Micronaut + Java (Suggestion: IDEA Intellij)
 * Maven 3.6.3 ou superior
 * Git
 
@@ -19,36 +33,11 @@
 
 1. Abra o projeto em sua IDE
     1. Execute os comandos Maven: mvn clean install
-    
-Após concluir o build da aplicação:
-
-`[INFO] --- maven-install-plugin:3.0.0-M1:install (default-install) @ valid-password ---`
-
-`[INFO] Installing C:\Projects\challenge-valid-password\valid-password.app\target\valid-password-0.0.1.jar to C:\Users\luizt\.m2\repository\com\challenge\valid-password\0.0.1\valid-password-0.0.1.jar`
-
-`[INFO] Installing C:\Projects\challenge-valid-password\valid-password.app\pom.xml to C:\Users\luizt\.m2\repository\com\challenge\valid-password\0.0.1\valid-password-0.0.1.pom`
-
-`[INFO] ------------------------------------------------------------------------`
-
-`[INFO] BUILD SUCCESS`
-
-`[INFO] ------------------------------------------------------------------------`
-
-`[INFO] Total time:  13.394 s`
-
-`[INFO] Finished at: 2020-12-04T14:11:09-02:00`
-
-`[INFO] ------------------------------------------------------------------------`
-
-`Process finished with exit code 0`
 
 2. Vá até a classe Application
    1. em: `src/main/java/com/challenge/Application.java`
    2. Execute-a
    
-O console deve exibir essa informação:
-
-`[main] INFO  io.micronaut.runtime.Micronaut - Startup completed in 1917ms. Server Running: http://localhost:8080`
 
 ## API Password
 ###{localhost:8080}/password
@@ -61,8 +50,7 @@ O console deve exibir essa informação:
 
 ### Response
 `{ "valid": false }`
-    
 
+[case]: https://github.com/itidigital/backend-challenge
 
-
-
+[Micronaut]: https://micronaut.io/documentation.html
