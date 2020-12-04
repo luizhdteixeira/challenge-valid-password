@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Assertions;
 import javax.inject.Inject;
 
 @MicronautTest
-public class ValidPasswordTest {
+class ValidPasswordTest {
 
     @Inject
     EmbeddedApplication<?> application;

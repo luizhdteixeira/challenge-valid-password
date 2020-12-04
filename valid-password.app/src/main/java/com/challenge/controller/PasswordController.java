@@ -9,8 +9,6 @@ import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Post;
 
-import javax.validation.Valid;
-
 @Controller("/password")
 public class PasswordController {
 
@@ -21,7 +19,7 @@ public class PasswordController {
     }
 
     @Post(produces = MediaType.APPLICATION_JSON, consumes = MediaType.APPLICATION_JSON)
-    public HttpResponse<ValidDto> validPassword(@Valid @Body PasswordDto passwordDto) {
+    public HttpResponse<ValidDto> validPassword(@Body PasswordDto passwordDto) {
         return HttpResponse.ok(passwordService.isValid(passwordDto));
     }
 }
