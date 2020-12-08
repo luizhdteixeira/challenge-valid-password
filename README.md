@@ -32,7 +32,8 @@ Utilizei de injeção de dependências por construção e segregação de interf
 ### Projeto
 
 1. Abra o projeto em sua IDE
-    1. Execute os comandos Maven: mvn clean install
+    1. Navegar no diretório: cd /valid-password.app
+    2. Execute os comandos Maven: mvn clean && mvn install
 
 2. Vá até a classe Application
    1. em: `src/main/java/com/challenge/Application.java`
@@ -49,7 +50,7 @@ Utilizei de injeção de dependências por construção e segregação de interf
 `{ Content-type: application/json }`
 
 ### Response
-`{ "valid": false }`
+`{ "valid": boolean }`
 
 [case]: https://github.com/itidigital/backend-challenge
 
